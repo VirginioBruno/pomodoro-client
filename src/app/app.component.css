@@ -1,0 +1,16 @@
+.app-container {
+    width: 50%;
+    display: flexbox;
+}
+
+button {
+    border: none;
+    margin-right: 5px; 
+    font-weight: bold;
+    font-size: 16px;
+}
+
+button:hover {
+    cursor: pointer;
+    font-size: 18px;
+}
