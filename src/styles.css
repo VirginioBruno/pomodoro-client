@@ -1,6 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 * {
-    margin: 50px auto 0 auto;
-    color: aliceblue;
-    background-color: darkslategrey;
+  @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@200&family=Audiowide&family=Barrio&family=Bungee+Shade&family=Cookie&family=Inter&family=Noto+Sans:ital,wght@0,400;1,300&family=Poppins:wght@300&family=Roboto:wght@300;400&family=Wallpoet&display=swap');
+  font-family: 'Roboto', sans-serif;;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body {
+  background-color: rgb(241, 236, 236);
 }

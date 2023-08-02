@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   interval: any;
   buttonText = 'Start!';
   timer = new Date(this.initialSeconds);
-  
+
   ngOnInit(): void {
     this.updateFormattedTimer(this.timer);
   }
@@ -42,7 +42,8 @@ export class AppComponent implements OnInit {
 
   resetTimer() {
     this.buttonText = "Start!";
-    this.updateFormattedTimer(new Date(this.initialSeconds));
+    this.timer = new Date(this.initialSeconds);
+    this.updateFormattedTimer(this.timer);
     clearInterval(this.interval);
     this.interval = undefined;
   }
