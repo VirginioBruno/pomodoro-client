@@ -1,5 +1,8 @@
-<div class="app-container">
-  <h1>Pomodoro Session!</h1>
+<div class="app-container {{theme}}">
+  <div class="tab">
+    <button (click)="setPomodoro()">Pomodoro</button>
+    <button (click)="setBreak()">Break</button>
+  </div>
   <p>{{ formattedTimer }}</p>
   <button (click)="togglePomodoro()">{{ buttonText }}</button>
   <button (click)="resetTimer()">Reset</button>

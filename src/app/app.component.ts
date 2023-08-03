@@ -6,11 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  readonly initialSeconds = 1500;
+  readonly pomodoroSeconds = 1500;
+  readonly breakSeconds = 300;
+  isPomodoroTab = true;
   formattedTimer = "";
+  theme = "pomodoro";
   interval: number | undefined;
   buttonText = "Start!";
-  timer = this.initialSeconds;
+  timer = this.pomodoroSeconds;
 
   ngOnInit(): void {
     this.updateFormattedTimer();
@@ -46,7 +49,7 @@ export class AppComponent implements OnInit {
 
   resetTimer() {
     this.buttonText = "Start!";
-    this.timer = this.initialSeconds;
+    this.timer = this.isPomodoroTab ? this.pomodoroSeconds : this.breakSeconds;
     this.updateFormattedTimer();
     clearInterval(this.interval);
     this.interval = undefined;
@@ -74,10 +77,35 @@ export class AppComponent implements OnInit {
 
   showNotification() {
     if (Notification.permission === "granted") {
+      let bodyMessage = this.isPomodoroTab ? "Congratulations! Your pomodoro has finished."
+        : "Your break time is over, it's time to go back to work!";
+
       new Notification("Pomodoro Session", {
-        body: "Congratulations! Your pomodoro has finished.",
+        body: bodyMessage,
         icon: "/assets/logo.png", // Replace with your own icon URL
       });
     }
+  }
+
+  setPomodoro() {
+    if (this.isPomodoroTab) return;
+    clearInterval(this.interval);
+    this.interval = undefined;
+    this.buttonText = "Start!";
+    this.theme = "pomodoro";
+    this.timer = this.pomodoroSeconds;
+    this.updateFormattedTimer();
+    this.isPomodoroTab = true;
+  }
+
+  setBreak() {
+    if(!this.isPomodoroTab) return;
+    clearInterval(this.interval);
+    this.interval = undefined;
+    this.buttonText = "Start!";
+    this.theme = "break";
+    this.timer = this.breakSeconds;
+    this.updateFormattedTimer();
+    this.isPomodoroTab = false;
   }
 }

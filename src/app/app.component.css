@@ -1,6 +1,5 @@
 
 .app-container {
-    background: linear-gradient(to right, #df2323, #da1111, #ff2600);
     border-radius: 10px;
     width: 24%;
     height: 390px;
@@ -8,11 +7,6 @@
     padding: 50px;
     margin: 80px auto 0 auto;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-}
-h1 {
-  font-size: 25pt;
-  color:  rgb(240, 248, 255);
-  margin-top: 20px;
 }
 
 p {
@@ -22,8 +16,7 @@ p {
   color: rgb(240, 248, 255);
 }
 
-
-button {
+.app-container button {
     border: none;
     border-radius: 5px;
     background-color: aliceblue;
@@ -31,7 +24,6 @@ button {
     width: 140px;
     height: 50px;
     margin-top: 40px;
-    margin-right: 5px;
     font-weight: bold;
     color: #dd3d3d;
     font-size: 16px;
@@ -40,5 +32,12 @@ button {
 
 button:hover {
     cursor: pointer;
-    font-size: 18px;
+}
+
+.pomodoro {
+  background: linear-gradient(to right, #df2323, #da1111, #ff2600);
+}
+
+.break {
+  background: linear-gradient(to right, dodgerblue, cornflowerblue, deepskyblue);
 }
